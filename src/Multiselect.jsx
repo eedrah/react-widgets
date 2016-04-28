@@ -473,8 +473,12 @@ var Multiselect = React.createClass({
 
   process(data, values, searchTerm){
     var { valueField } = this.props;
-    var items = data.filter( i =>
-      !values.some(v => valueMatcher(i, v, valueField)))
+    if (true) {
+        var items = data;
+    } else {
+      var items = data.filter( i =>
+        !values.some(v => valueMatcher(i, v, valueField)))
+    }
 
     this._lengthWithoutValues = items.length;
 
